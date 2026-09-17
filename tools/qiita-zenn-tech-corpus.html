@@ -1,0 +1,46 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Qiita + Zenn Tech Article Scraper (Japan) | JP Data Tools by Morikuma</title><meta name="description" content="Collect Japanese technical articles from Qiita and Zenn by tag, keyword or user. Markdown/plain-text bodies, tags, likes, authors — ready for RAG, fine-tuning, dev-trend research and content ideation. Pay per article.">
+<link rel="canonical" href="https://morikuma1223.github.io/autopilot-site/tools/qiita-zenn-tech-corpus.html">
+<meta property="og:title" content="Qiita + Zenn Tech Article Scraper (Japan)"><meta property="og:description" content="Collect Japanese technical articles from Qiita and Zenn by tag, keyword or user. Markdown/plain-text bodies, tags, likes, authors — ready for RAG, fine-tuning, dev-trend research and content ideation. Pay per article."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Qiita + Zenn Tech Article Scraper (Japan)","description":"Collect Japanese technical articles from Qiita and Zenn by tag, keyword or user. Markdown/plain-text bodies, tags, likes, authors — ready for RAG, fine-tuning, dev-trend research and content ideation. Pay per article.","applicationCategory":"DeveloperApplication","operatingSystem":"Web","url":"https://apify.com/morikuma/qiita-zenn-tech-corpus","offers":{"@type":"Offer","priceCurrency":"USD","price":0.004}}</script>
+<style>body{max-width:760px;margin:2rem auto;padding:0 1rem;font:16px/1.7 system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;color:#1c1c1c;background:#fafaf7}a{color:#0b5fff}nav{display:flex;gap:1rem;margin-bottom:2rem;font-size:.95rem}pre{background:#111;color:#eee;padding:1rem;overflow:auto;border-radius:8px}code{font-size:.9em}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:.4rem .6rem;text-align:left}.cta{display:inline-block;background:#0b5fff;color:#fff;padding:.6rem 1.2rem;border-radius:8px;text-decoration:none;margin:.5rem 0}.card{border:1px solid #e3e3dc;border-radius:10px;padding:1rem;margin:.8rem 0;background:#fff}footer{margin-top:3rem;font-size:.85rem;color:#666}</style></head>
+<body><nav><a href="https://morikuma1223.github.io/autopilot-site/">Home</a><a href="https://morikuma1223.github.io/autopilot-site/tools/">Data Tools</a><a href="https://morikuma1223.github.io/autopilot-site/products/">Products</a><a href="https://morikuma1223.github.io/autopilot-site/posts/">Blog</a></nav>
+<h1>Qiita + Zenn Tech Article Scraper (Japan)</h1><p>Collect Japanese technical articles from Qiita and Zenn by tag, keyword or user. Markdown/plain-text bodies, tags, likes, authors — ready for RAG, fine-tuning, dev-trend research and content ideation. Pay per article.</p><a class="cta" href="https://apify.com/morikuma/qiita-zenn-tech-corpus">Apify Store で使う（無料枠あり）→</a>
+
+<p>Collects Japanese technical articles from <strong><a href="https://qiita.com">Qiita</a></strong> and <strong><a href="https://zenn.dev">Zenn</a></strong> — the two largest developer knowledge-sharing platforms in Japan — and returns them as clean JSON with <strong>Markdown / plain-text bodies</strong>. Built for Japanese <strong>LLM datasets (RAG, fine-tuning, evaluation)</strong>, developer-trend research and content ideation.</p>
+
+<h2>What you get</h2>
+
+<table><tr><th>Field</th><th>Description</th></tr><tr><td><code>platform</code></td><td><code>qiita</code> or <code>zenn</code></td></tr><tr><td><code>title</code>, <code>url</code>, <code>id</code> / <code>slug</code></td><td>Article identity</td></tr><tr><td><code>author</code>, <code>authorName</code>, <code>publication</code></td><td>Author (and Zenn publication if any)</td></tr><tr><td><code>publishedAt</code>, <code>updatedAt</code></td><td>ISO 8601</td></tr><tr><td><code>likes</code>, <code>stocks</code> / <code>bookmarks</code>, <code>comments</code></td><td>Engagement metrics — use <code>minLikes</code> as a quality filter</td></tr><tr><td><code>tags</code></td><td>Qiita tags / Zenn topics</td></tr><tr><td><code>bodyMarkdown</code> (Qiita) / <code>bodyText</code> (Zenn)</td><td>Full body. Qiita returns the author's original Markdown; Zenn body is converted to plain text preserving headings and code blocks</td></tr><tr><td><code>bodyLength</code>, <code>articleType</code>, <code>emoji</code></td><td>Extras</td></tr></table>
+<h2>Input</h2>
+
+<ul><li><strong>Tags / topics</strong> — e.g. <code>claude</code>, <code>python</code>, <code>nextjs</code>, <code>生成AI</code>. Applied to both platforms.</li><li><strong>Keywords</strong> (Qiita only) — free-text search in title/body.</li><li><strong>User names</strong> — pull everything an author published.</li><li><strong>Minimum likes</strong> / <strong>Published after</strong> — dataset quality and recency filters. Filtering happens *before* charging, so you don't pay for skipped articles.</li><li><strong>Include body</strong> — turn off for metadata-only crawls (cheaper).</li><li><strong>Qiita access token</strong> (optional) — raises the Qiita API limit from 60 to 1,000 requests/hour (each request fetches up to 100 articles).</li></ul>
+<h2>Pricing (pay per event)</h2>
+
+<ul><li><strong>Article (with body)</strong> — full body + metadata.</li><li><strong>Article (metadata only)</strong> — title, URL, author, tags, likes, dates.</li></ul>
+<p>The Apify free plan is enough to try it.</p>
+
+<h2>Use cases</h2>
+
+<ul><li><strong>Japanese RAG / fine-tuning corpora</strong> — e.g. "all Qiita + Zenn articles tagged <code>claude</code> with ≥ 20 likes since 2025" in one run.</li><li><strong>Developer trend research</strong> — which frameworks / tools are Japanese engineers writing about this month?</li><li><strong>Content ideation for tech blogs & YouTube</strong> — find high-engagement topics and gaps.</li><li><strong>Competitive intelligence for dev-tool vendors</strong> — track how your product and competitors are discussed in Japan.</li></ul>
+<h2>Example output</h2>
+
+<pre><code>{
+<p>  &quot;platform&quot;: &quot;zenn&quot;,</p>
+<p>  &quot;title&quot;: &quot;Claude Codeで実行してほしくないコマンドには代替手段を伝える&quot;,</p>
+<p>  &quot;url&quot;: &quot;https://zenn.dev/example/articles/abc123&quot;,</p>
+<p>  &quot;author&quot;: &quot;example&quot;,</p>
+<p>  &quot;publishedAt&quot;: &quot;2026-09-14T10:00:00.000+09:00&quot;,</p>
+<p>  &quot;likes&quot;: 42,</p>
+<p>  &quot;tags&quot;: [&quot;Claude&quot;, &quot;ClaudeCode&quot;, &quot;AI&quot;],</p>
+<p>  &quot;bodyText&quot;: &quot;## はじめに\nClaude Code の設定で…&quot;,</p>
+<p>  &quot;bodyLength&quot;: 5102</p>
+<p>}</p>
+</code></pre>
+
+<h2>Notes</h2>
+
+<ul><li>Qiita is accessed through its official public API; Zenn through its public JSON endpoints and server-rendered article pages, at low request rates.</li><li>Article content belongs to its authors. Use the data in accordance with each platform's terms and Japanese copyright law (research, analysis and internal RAG use are typical).</li><li>See also: <strong>PR TIMES Press Release Scraper</strong> by the same developer for Japanese business news.</li></ul>
+<h2>料金（Pay-per-event）</h2><table><tr><th>イベント</th><th>単価</th></tr><tr><td>Article (with body)</td><td>$0.004</td></tr></table>| Article (metadata only) | $0.001 |
+<h2>FAQ</h2><div class="card"><strong>Q. Qiita の API 制限は？</strong><p>未認証で 60 リクエスト/時（1リクエスト = 最大100記事）。Qiita のアクセストークンを入力すると 1,000 リクエスト/時に上がります。</p></div><div class="card"><strong>Q. Zenn のキーワード検索はできますか？</strong><p>Zenn は公開キーワード検索 API を提供していないため、トピック（タグ）またはユーザー単位で取得します。</p></div><div class="card"><strong>Q. 本文は Markdown ですか？</strong><p>Qiita は投稿者の Markdown 原文、Zenn は本文 HTML を見出し・コードブロック付きのプレーンテキストに変換して返します。</p></div>
+<footer>© Morikuma / JOA. 掲載ツールは各サイトの利用規約・robots.txt を尊重し、公開情報のみを対象にしています。</footer></body></html>

@@ -1,0 +1,13 @@
+# JP Data Tools by Morikuma
+
+> 日本の公開データ（プレスリリース・技術記事・EC・統計）をLLMで使いやすい形で取得できる Apify アクターと、Claude/AI 業務自動化テンプレートを提供しています。
+
+## Data Tools
+- [PR TIMES Press Release Scraper (Japan)](https://morikuma1223.github.io/autopilot-site/tools/prtimes-press-release-scraper.html): Collect Japanese press releases from PR TIMES by keyword or company. Clean JSON (title, full body text, company, category, date, images) ready for LLM/RAG, media monitoring and competitor tracking. Pay only per release.
+- [Qiita + Zenn Tech Article Scraper (Japan)](https://morikuma1223.github.io/autopilot-site/tools/qiita-zenn-tech-corpus.html): Collect Japanese technical articles from Qiita and Zenn by tag, keyword or user. Markdown/plain-text bodies, tags, likes, authors — ready for RAG, fine-tuning, dev-trend research and content ideation. Pay per article.
+
+## Products
+- [Claude Code 業務自動化スキルテンプレート集 vol.1（8本）](https://morikuma1223.github.io/autopilot-site/products/claude-code-business-skills-jp.html): 中小事業者・個人事業主向け。Claude Code / Cowork にそのまま置くだけで使える日本語 SKILL.md テンプレート8本（日次売上レポート、見積書、問い合わせ一次返信、SNS投稿量産、SEO記事、議事録→タスク化、請求書リマインド、競合プレスリリース監視）。
+
+## Posts
+- [Turning Japanese press releases (PR TIMES) into an LLM-ready dataset in 5 minutes](https://morikuma1223.github.io/autopilot-site/posts/2026-09-15-scrape-prtimes-press-releases-for-llm.html)

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://morikuma1223.github.io/autopilot-site/sitemap.xml
